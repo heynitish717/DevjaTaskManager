@@ -1,0 +1,8 @@
+#navbarResponsive {
+    animation: slideOutDown; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 0s; /* don't forget to set a duration! */
+  }
+
+/* .hideResponsiveMenu{
+  display:"none";
+} */

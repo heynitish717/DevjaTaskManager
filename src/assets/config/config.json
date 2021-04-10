@@ -1,0 +1,10 @@
+{
+    "apiKey": "6GFzLWpLtjMgFuQb5yV6GhbygqoJXf2t",
+    "optiqApiUrl": "https://devza.com/tests/tasks/",
+    "idletthreshold": 1800,
+    "idlethresholddevicepages": 120,
+    "deviceDetectionFailurePopupTimer": 3,
+    "deviceReadNextAttemptTimer": 5,
+    "timeoutCountDown": 1,
+    "maxdevicereadattempts": 3
+}

@@ -1,0 +1,101 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-sm-12 col-md-10">
+                        <div class="card mb-0">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center">
+                                    <h4 class="page-title">
+                                        <span>Update Task</span>
+                                    </h4>
+                                    <ul class="nav nav-pills nav-default nav-pills-no-bd nav-sm ml-auto" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link" [ngClass]="{'active':isLink1}">Update</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" [ngClass]="{'active':isLink2}"
+                                                (click)="RouteToPage('reshuffle')">Reshuffle</a>
+                                        </li>
+                                        <div class="seperator"></div>
+                                        <button type="button" class="btn btn-primary mr-1"
+                                            (click)="RouteToPage('back')">Back</button>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-sm hover" datatable
+                                        [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+                                        <thead>
+                                            <tr>
+                                                <th width="5%">Id</th>
+                                                <th>Task Description</th>
+                                                <th width="11%">Assigned To</th>
+                                                <th class="text-center" width="11%">Created On</th>
+                                                <th class="text-center" width="11%">Due Date</th>
+                                                <th class="text-center" width="8%">Prirotiy</th>
+                                                <th class="text-center" width="3%">Edit</th>
+                                                <th class="text-center" width="3%">Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor=" let group of taskList">
+
+                                                <td>{{group.id}}</td>
+                                                <td>{{group.message}}</td>
+                                                <td>{{group.assigned_name}}</td>
+                                                <td class="text-center">{{group.created_on | date: 'd-MMM-yyyy HH:mm'}}
+                                                </td>
+                                                <td class="text-center">{{group.due_date | date: 'd-MMM-yyyy HH:mm'}}
+                                                </td>
+
+                                                <td class="text-center">
+                                                    <span class="badge badge-success"
+                                                        *ngIf="group.priority == '3'">Low</span>
+                                                    <span class="badge badge-secondary handcursor"
+                                                        *ngIf="group.status == 'PFA'"
+                                                        (click)="SweetConfirm(group,'update')">Pending</span>
+                                                    <span class="badge badge-warning"
+                                                        *ngIf="group.priority == '2'">Medium</span>
+                                                    <span class="badge badge-danger"
+                                                        *ngIf="group.priority == '1'">High</span>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div class="form-button-action">
+                                                        <button type="button" data-toggle="modal" data-target="#addDept"
+                                                            (click)="UpdateTask(group)" title=""
+                                                            class="btn btn-link btn-primary btn-lg"
+                                                            data-original-title="Edit">
+                                                            <i class="fa fa-edit"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center" (click)="SweetConfirm(group.id)">
+                                                    <div class="form-button-action">
+                                                        <button type="button" data-toggle="tooltip" title=""
+                                                            class="btn btn-link btn-danger" data-original-title="Delete"
+                                                            aria-describedby="tooltip352135">
+                                                            <h3><i class="fa fa-times"></i></h3>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

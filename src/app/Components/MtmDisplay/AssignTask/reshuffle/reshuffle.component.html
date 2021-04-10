@@ -1,0 +1,86 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-sm-12 col-md-10">
+                        <div class="card mb-0">
+                            <div class="card-header">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="page-title">Reshuffle Task</h4>
+                                    <div></div>
+                                    <button type="button" class="btn btn-primary mr-1"
+                                        (click)="RouteToPage('back')">Back</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <div cdkDropList id="dropList1" [cdkDropListData]="highPriorityTaskList"
+                                            [cdkDropListConnectedTo]="[secondList,thirdList]" #firstList="cdkDropList"
+                                            (cdkDropListDropped)="drop($event)" style="width: 30%">
+
+                                            <span class="shuffleListHeader">High</span>
+                                            <div class="popWrapper">
+
+                                                <div *ngFor="let task of highPriorityTaskList" class="pop" cdkDrag>
+                                                    <p class="taskData"><span>Task Id </span>- {{task.id}}</p>
+                                                    <p class="taskData"><span>Assigned To</span> -
+                                                        {{task.assigned_name}}</p>
+                                                    <div class="viewTaskDetail" (click)="ViewTask(task)">
+                                                        <i class="fa fa-eye"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div cdkDropList id="dropList2" [cdkDropListData]="mediumPriorityTaskList"
+                                            [cdkDropListConnectedTo]="[firstList,thirdList]" #secondList="cdkDropList"
+                                            (cdkDropListDropped)="drop($event)" style="width: 30%">
+                                            <span class="shuffleListHeader">Medium</span>
+                                            <div class="popWrapper">
+
+                                                <div *ngFor="let task of mediumPriorityTaskList" class="pop" cdkDrag>
+                                                    <p class="taskData"><span>Task Id </span>- {{task.id}}</p>
+                                                    <p class="taskData"><span>Assigned To</span> -
+                                                        {{task.assigned_name}}</p>
+                                                    <div class="viewTaskDetail" (click)="ViewTask(task)">
+                                                        <i class="fa fa-eye"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div cdkDropList id="dropList3" [cdkDropListData]="lowPriorityTaskList"
+                                            [cdkDropListConnectedTo]="[firstList,secondList]" #thirdList="cdkDropList"
+                                            (cdkDropListDropped)="drop($event)" style="width: 30%">
+                                            <span class="shuffleListHeader">Low</span>
+                                            <div class="popWrapper">
+
+                                                <div *ngFor="let task of lowPriorityTaskList" class="pop" cdkDrag>
+                                                    <p class="taskData"><span>Task Id </span>- {{task.id}}</p>
+                                                    <p class="taskData"><span>Assigned To</span> -
+                                                        {{task.assigned_name}}</p>
+                                                    <div class="viewTaskDetail" (click)="ViewTask(task)">
+                                                        <i class="fa fa-eye"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

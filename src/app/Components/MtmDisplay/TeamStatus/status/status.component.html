@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-sm-12 col-md-10">
+                        <div class="">
+                            <div class="card-body">
+                                <div class="statusWrapper">
+                                    <div class="statusBox col-md-5">
+                                        <div class="userBadge" *ngFor="let user of userList;let i = index">
+                                            <img class="image" [src]="user.picture" alt="user image">
+                                            <div class="textGroup">
+                                                <div>
+                                                    <span class="taskAssignee">{{user.name}}</span>
+                                                    <span class="taskBadge">Task:2299</span>
+                                                </div>
+
+                                                <p>Working on validation of admin forms</p>
+                                            </div>
+                                            <div class="help" *ngIf="i==3"></div>
+                                        </div>
+                                    </div>
+                                    <div class="chatBox col-md-7">
+                                        <div class="chatWrapper">
+                                            <div class="chatRow" *ngFor="let item of conversation;">
+                                                <div [class]="item.sourceType">
+                                                    <span>{{item.sourceName}}</span>
+                                                    <span>
+                                                        {{item.Message}}
+                                                    </span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="typingBox">
+                                            <textarea rows="4" cols="2" pInputTextarea></textarea>
+                                            <span class="send"><i class="fa fa-paper-plane fa-2x"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

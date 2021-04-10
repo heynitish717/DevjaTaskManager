@@ -1,0 +1,64 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+                <div class="row">
+                    <div class="col-xl-2 col-lg-2"></div>
+                    <div class="col-sm-6 col-xl-4 col-lg-4">
+                        <div class="card card-stats card-round card-secondary">
+                            <div class="card-body card-text">
+                                Create Task
+                            </div>
+                            <div class="cardHoverIcon" (click)="RouteToPage('create')">
+                                <i class="fa fa-plus"></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-4 col-lg-4">
+                        <div class="card card-stats card-round card-secondary">
+                            <div class="card-body card-text">
+                                Update Task (Modify,Assign,Reshuffle)
+                            </div>
+                            <div class="cardHoverIcon" (click)="RouteToPage('modify')">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2"></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-2 col-lg-2"></div>
+                    <div class="col-sm-6 col-xl-4 col-lg-4">
+                        <div class="card card-stats card-round card-secondary">
+                            <div class="card-body card-text">
+                                Task Report
+                            </div>
+                            <div class="cardHoverIcon" (click)="RouteToPage('report')">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-xl-4 col-lg-4">
+                        <div class="card card-stats card-round card-secondary">
+                            <div class="card-body card-text">
+                                Team Status
+                            </div>
+                            <div class="cardHoverIcon" (click)="RouteToPage('status')">
+                                <i class="far fa-comment-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

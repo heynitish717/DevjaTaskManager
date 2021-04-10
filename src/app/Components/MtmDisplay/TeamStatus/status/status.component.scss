@@ -1,0 +1,152 @@
+.page-inner{
+    padding:0;    
+    .card-body{
+        padding:0;
+        margin-top:15px;
+        background:transparent;
+        .statusWrapper{
+            display: flex;
+            width:100%;
+            height: 87vh;
+            //background-color: antiquewhite;
+            background:transparent;
+
+            .statusBox{
+                height: 100%;
+                //background-color: yellowgreen;
+                overflow-y:auto;
+                overflow-x:hidden;
+                display:flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding-top:10px;
+                padding-bottom:10px;
+
+                .userBadge{
+                    width:90%;
+                    height: 100px;
+                    background-color: rgba(110, 69, 69, 0.144);
+                    border-radius:20px;
+                    display: flex;
+                    align-items:center;
+                    justify-content: flex-start;
+                    margin-bottom:5px;
+                    position: relative;
+                    
+                    .image{
+                        border-radius: 50%;
+                        background-color: red;
+                        width:70px;
+                        height: 70px;
+                        margin-left:-35px;
+                    }
+                    .textGroup{
+                        margin-left:20px;
+
+                        .taskAssignee{
+                            font-weight:bold;
+                        }
+
+                        .taskBadge{
+                            margin-left:20px;
+                            background-color: green;
+                            color:white;
+                            padding:1px 5px;
+                            border-radius:20px;
+                        }                        
+                    }
+                    
+                    .help{
+                        position: absolute;
+                        width:10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: red;
+                        top:10px;
+                        right:10px;
+                    }
+                }
+            }
+
+            .chatBox{
+                height: 100%;
+                background-color: magenta; 
+                padding:0;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                .chatWrapper{
+                    width:100%;
+                    height: 80%;
+                    background-color: white;
+                    display:flex;
+                    flex-direction: column; 
+                    overflow-y:auto;  
+                    padding:10px 16px;
+
+                    .chatRow{
+                        width:100%;
+                        height: auto;
+                        padding:0;
+
+                        .sender{
+                            width:60%;
+                            height:auto;
+                            padding:5px 15px;
+                            margin-bottom:5px;
+                            border-radius:20px;
+                            background-color: rgba(110, 69, 69, 0.144);
+                            text-align: left;
+                            
+                            span{
+                                display: block;
+                            }
+                            span:nth-of-type(1){
+                                font-weight: bold;
+                            }
+                        }
+                        .receiver{
+                            width:60%;
+                            height:auto;
+                            padding:5px 15px;
+                            margin-bottom:5px;
+                            margin-left:auto;
+                            border-radius:20px;
+                            background-color: rgba(110, 69, 69, 0.144);
+                            text-align: right;
+                            
+                            span{
+                                display: block;
+                            }
+                            span:nth-of-type(1){
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+                .typingBox{
+                    width:100%;
+                    height: 20%;
+                    background-color: cadetblue;
+                    display:flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    .send{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color:white;
+                        width:45px;
+                        height: 45px;
+                        border-radius: 50%;
+
+                        i{
+                            margin-right:5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

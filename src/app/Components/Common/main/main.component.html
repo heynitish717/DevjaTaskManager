@@ -1,0 +1,32 @@
+<!-- <ngx-loading-bar ref="router" [includeSpinner]="false" height="15px;"  [color]="'red'"></ngx-loading-bar> -->
+
+<p-toast></p-toast>
+
+<p-dialog header="Error" [(visible)]="commonDataService.displayErrorDialog" [modal]="true" [draggable]="false"
+    [resizable]="false" [showHeader]="true" [position]="'top'" [baseZIndex]="10000"
+    [style]="{'margin-left':'80px','font-size':'20px', 'margin-right':'80px'}">
+    <p [style]="{width: '30vw',height:'2vw'}">
+        <strong style="font-size: 18px; text-align: center;" class="text-danger">{{dialog?.detail}}</strong>
+    </p>
+</p-dialog>
+
+<p-dialog header="Info" [(visible)]="commonDataService.displayInfoDialog" [modal]="true" [draggable]="false"
+    [resizable]="false" [showHeader]="true" [position]="'top'" [baseZIndex]="10000"
+    [style]="{'margin-left':'80px','font-size':'20px', 'margin-right':'80px'}">
+    <p [style]="{width: '30vw',height:'2vw'}">
+        <strong style="font-size: 18px; text-align: center;" class="text-danger">{{dialog?.detail}}</strong>
+    </p>
+</p-dialog>
+
+<p-dialog header="User Guide" [(visible)]="commonDataService.displayVideoDialog" [modal]="true" [draggable]="false"
+    [resizable]="false" [showHeader]="true" [position]="'top'" [baseZIndex]="10000"
+    [style]="{'margin-left':'80px','font-size':'20px', 'margin-right':'80px'}">
+    <p [style]="{width: '50vw',height:'25vw','font-size':'20px'}">
+
+        <video #videoInfo class="bgvid" loop autoplay preload="" style="height: 100%">
+            <source style="height: 100%" src="{{infoVideo}}" type="video/mp4">
+        </video>
+    </p>
+</p-dialog>
+
+<app-content></app-content>

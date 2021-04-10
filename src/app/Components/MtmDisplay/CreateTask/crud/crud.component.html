@@ -1,0 +1,99 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <!-- <app-navbar></app-navbar> -->
+    <div class="main-panel">
+        <div class="content">
+            <div class="page-inner">
+
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-sm-12 col-md-10">
+                        <div class="card mb-0">
+                            <form #priorityForm="ngForm" (ngSubmit)="priorityForm.form.valid && PrepCrudData()">
+                                <div class="card-header">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <h4 class="page-title">Create Task</h4>
+                                        <button type="button" class="btn btn-primary mr-1"
+                                            (click)="RouteToPage('back')">Back</button>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row mt-2">
+                                        <div class="col-md-12">
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <div class="pb-3">
+                                                        <h5>Task Description</h5>
+                                                        <textarea rows="5" cols="35" pInputTextarea
+                                                            [(ngModel)]="crudData.TaskDescription"
+                                                            name="TaskDescription" autoResize="autoResize"
+                                                            [style]="{'width':'100%'}" #refTD="ngModel" required>
+                                                        </textarea>
+                                                        <div class="pt-1">
+                                                            <span class="text-danger"
+                                                                *ngIf="(priorityForm.submitted) && refTD.errors?.required">Task
+                                                                Description
+                                                                is required</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="pb-3">
+                                                        <label>Due Date</label>
+                                                        <p-calendar [minDate]="minimumDate"
+                                                            [(ngModel)]="crudData.DueDate" name="DueDate"
+                                                            dateFormat="dd-M-yy" appendTo="body">
+                                                        </p-calendar>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="pb-3">
+                                                        <label>Priority</label>
+                                                        <p-dropdown [options]="priorityList"
+                                                            [(ngModel)]="crudData.SelectedPriority"
+                                                            name="selectedPriority" placeholder="Select priority"
+                                                            optionLabel="name" [showClear]="true">
+                                                        </p-dropdown>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-sm-12">
+                                                    <div class="pb-3">
+                                                        <label>Assign To</label>
+                                                        <p-dropdown [options]="userList"
+                                                            [(ngModel)]="crudData.SelectedAssignee"
+                                                            name="SelectedAssignee" placeholder="Select assignee"
+                                                            optionLabel="name" [showClear]="true">
+                                                        </p-dropdown>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="d-flex align-items-center">
+                                        <button type="submit" class="btn btn-primary mr-1" *ngIf="isAdd && !isView"
+                                            (click)="SetCrudActionName('Add')">
+                                            <i class="fas fa-circle-notch fa-spin" *ngIf="showLoaderIcon"></i>
+                                            Save
+                                        </button>
+                                        <button type="submit" class="btn btn-primary mr-1" *ngIf="!isAdd && !isView"
+                                            (click)="SetCrudActionName('Edit')">
+                                            <i class="fas fa-circle-notch fa-spin" *ngIf="showLoaderIcon"></i>
+                                            Update
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+:root{
+    --primary-color: blue;
+}
+
+.page-inner{
+    .card {
+        height: 14rem;
+        font-size: 1.5rem;
+        position: relative;
+
+        .card-text{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            text-align: center;                    
+        }
+
+        &:hover{
+            content:"";
+            color:#E5E5E5;
+            background-color: green;
+            opacity: 0.3;
+            transition:background-color 0.3s linear 0s;
+            transition:opacity 0.3s ease 0s;
+            transition:color 0.3s ease 0s;
+        }
+
+        .cardHoverIcon{
+            position:absolute;
+            display: none;
+            text-align: center;
+            border-radius: 50%;
+            top:40%;
+            left:50%;
+            width:50px;
+            height: 50px;
+            background-color: blue;
+            z-index: 100;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+            box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+            -moz-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+            -webkit-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+            -o-box-shadow: 10px -10px 5px  rgba(0,0,0,0.6);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+
+        .cardHoverIcon i{
+            color:black;         
+        }
+
+        &:hover .cardHoverIcon{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition:display 3s linear 0s;
+        }
+    }
+
+}
